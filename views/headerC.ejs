@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Kandapang's Blog</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+	<header>
+		<h1><%= title %></h1>
+	</header>
+
+<nav>
+	<span><a title="EnglishVersion" href="/">English</a></span>
+	<span><a title="home" href="/indexC">主页</a></span>
+	
+	<% if (user) { %>
+	<span><a title="upload" href="/uploadC">上传</a></span>
+	<span><a title="post" href="/postC">发布</a></span>
+	<span><a title="logout" href="/logoutC">登出</a></span>
+	<% } else { %>
+	<span><a title="login" href="/loginC">登录</a></span>
+	<span><a title="register" href="/regC">注册</a></span>
+	<% } %>
+	
+</nav>
+
+<article>
+<% if (success) { %>
+	<div id = "reminder"><%= success %></div>
+<% } %>
+<% if (error) { %>
+	<div id = "reminder"><%= error %></div>
+<% } %>
